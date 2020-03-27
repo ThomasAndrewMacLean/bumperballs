@@ -1,5 +1,7 @@
 # gatsby-contentful-starter
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ThomasAndrewMacLean/bumperballs.svg)](https://greenkeeper.io/)
+
 Gatsby [Contentful](https://www.contentful.com) starter for creating a blog
 
 ![The index page of the starter blog](https://rawgit.com/contentful-userland/gatsby-contentful-starter/master/screenshot.jpg "The index page of the starter blog")
