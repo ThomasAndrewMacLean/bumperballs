@@ -9,8 +9,6 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
 export const TranslationContext = createContext([]);
 
 function MyApp({ Component, pageProps, translations }) {
-  console.log(translations);
-
   return (
     <TranslationContext.Provider value={translations}>
       <Component {...pageProps} />
@@ -23,14 +21,12 @@ function MyApp({ Component, pageProps, translations }) {
 // perform automatic static optimization, causing every page in your app to
 // be server-side rendered.
 //
-MyApp.getInitialProps = async appContext => {
+MyApp.getInitialProps = async (appContext) => {
   // calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(appContext);
-  const texts = await base('Text')
-    .select()
-    .all();
+  const texts = await base('Text').select().all();
 
-  return { ...appProps, translations: texts.map(x => x.fields) };
+  return { ...appProps, translations: texts.map((x) => x.fields) };
 };
 
 export default MyApp;
