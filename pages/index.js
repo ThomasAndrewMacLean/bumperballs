@@ -4,11 +4,14 @@ import Faq from '../components/Faq';
 import Games from '../components/Games';
 import Praktisch from '../components/Praktisch';
 import Formules from '../components/Formules';
-import '../styles/style.css';
+import Head from 'next/head';
 
 const IndexPage = () => {
   return (
     <Main>
+      <Head>
+        <link rel="stylesheet" href="style.css" />
+      </Head>
       <Hero>
         <Title>BMS Rent</Title>
       </Hero>
