@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import T from '../components/Translation';
 import Faq from '../components/Faq';
 import Games from '../components/Games';
 import Praktisch from '../components/Praktisch';
