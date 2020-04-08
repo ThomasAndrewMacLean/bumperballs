@@ -20,9 +20,17 @@ body {
   margin: auto;
   max-width: 800px;
 }
+.topBottomPadding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 h1 {
   padding: 2rem 0;
   font-weight: 200;
+}
+ul {
+  margin-left: 3rem;
+  padding-bottom: 1rem;
 }
 
 h2 {

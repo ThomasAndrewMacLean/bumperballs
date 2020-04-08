@@ -38,10 +38,7 @@ const Wrapper = styled.div`
     margin-left: 25px;
     text-decoration: none;
   }
-  ul {
-    margin-left: 3rem;
-    padding-bottom: 1rem;
-  }
+  
 `;
 
 export default Faq;

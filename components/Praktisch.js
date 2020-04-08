@@ -4,14 +4,18 @@ import T from './Translation';
 
 const Praktisch = () => {
   return (
-    <PraktischDiv>
-      <T id={'praktischeInfo'}></T>
-      <T id={'veiligheid'}></T>
-      <T id={'waarborg'}></T>
+    <PraktischDiv className="topBottomPadding">
+      <div className="content">
+        <T id={'praktischeInfo'}></T>
+        <T id={'veiligheid'}></T>
+        <T id={'waarborg'}></T>
+      </div>
     </PraktischDiv>
   );
 };
 
-const PraktischDiv = styled.div``;
+const PraktischDiv = styled.div`
+  background: #95f080bf;
+`;
 
 export default Praktisch;

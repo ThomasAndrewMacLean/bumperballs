@@ -4,6 +4,7 @@ import T from '../components/Translation';
 import Faq from '../components/Faq';
 import Games from '../components/Games';
 import Praktisch from '../components/Praktisch';
+import Formules from '../components/Formules';
 
 const IndexPage = () => {
   return (
@@ -21,11 +22,8 @@ const IndexPage = () => {
 
       <Games></Games>
 
+      <Formules></Formules>
       <Praktisch></Praktisch>
-  
-      <Div>
-        <T id={'formules'}></T>
-      </Div>
     </Main>
   );
 };
@@ -41,7 +39,6 @@ const Title = styled.h1`
   /* color: red; */
 `;
 
-const Div = styled.div``;
 const FaqWrap = styled.div`
   .faqTitel {
     padding-bottom: 1rem;

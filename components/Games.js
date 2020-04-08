@@ -4,7 +4,7 @@ import T from './Translation';
 
 const Games = () => {
   return (
-    <GameDiv>
+    <GameDiv className="topBottomPadding">
       <div className="content">
         <T id={'welkeSpelletjes'}></T>
         <ul>
@@ -25,8 +25,6 @@ const Games = () => {
 
 const GameDiv = styled.div`
   background: var(--background-light);
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 
   ul {
     list-style: none;
