@@ -1,32 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import T from '../components/Translation';
+import Faq from '../components/Faq';
+import Games from '../components/Games';
+import Praktisch from '../components/Praktisch';
 
 const IndexPage = () => {
   return (
     <Main>
       <Hero>
         <Title>BMS Rent</Title>
-        <T id={'watZijnBumperballen'}></T>
       </Hero>
-      <Div>
-        <T id={'waarGebruiken'}></T>
-      </Div>
-      <Div>
-        <T id={'voorWelkeGelegenheden'}></T>
-      </Div>
-      <Div>
-        <T id={'welkeSpelletjes'}></T>
-      </Div>
-      <Div>
-        <T id={'veiligheid'}></T>
-      </Div>
-      <Div>
-        <T id={'praktischeInfo'}></T>
-      </Div>
-      <Div>
-        <T id={'waarborg'}></T>
-      </Div>
+
+      <FaqWrap>
+        <h2 className="content faqTitel">Wat, waar, hoe?</h2>
+        <Faq q="watZijnBumperballen"></Faq>
+        <Faq q="waarGebruiken"></Faq>
+        <Faq q="voorWelkeGelegenheden"></Faq>
+      </FaqWrap>
+
+      <Games></Games>
+
+      <Praktisch></Praktisch>
+  
       <Div>
         <T id={'formules'}></T>
       </Div>
@@ -35,20 +31,22 @@ const IndexPage = () => {
 };
 
 const Main = styled.main`
-  margin: auto;
-  max-width: 800px;
   background: lightblue;
 `;
 const Hero = styled.div`
-  padding: 2rem 4rem;
-  background: green;
+  background: url('hero.jpg');
+  height: 60vh;
 `;
 const Title = styled.h1`
   /* color: red; */
 `;
 
-const Div = styled.div`
-  padding: 0 4rem;
+const Div = styled.div``;
+const FaqWrap = styled.div`
+  .faqTitel {
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+  }
+  padding-bottom: 4rem;
 `;
-
 export default IndexPage;
