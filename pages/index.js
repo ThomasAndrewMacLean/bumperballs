@@ -4,6 +4,7 @@ import Faq from '../components/Faq';
 import Games from '../components/Games';
 import Praktisch from '../components/Praktisch';
 import Formules from '../components/Formules';
+import '../styles/style.css';
 
 const IndexPage = () => {
   return (
