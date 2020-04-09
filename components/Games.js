@@ -34,7 +34,7 @@ const Clip = styled.div`
   clip-path: url(#wave);
 `;
 const GameDiv = styled.div`
-  background: var(--background-light);
+  background: var(--background-dark);
 
   ul {
     list-style: none;
@@ -46,7 +46,8 @@ const GameDiv = styled.div`
   li {
     width: 30%;
     background-color: #fff;
-    box-shadow: 3px 3px 6px 0px #531bad1a;
+    border: 3px solid black;
+    /* box-shadow: 3px 3px 6px 0px #531bad1a; */
     text-align: center;
     padding: 1rem;
     @media (max-width: 700px) {
@@ -58,6 +59,7 @@ const GameDiv = styled.div`
   h2 {
     text-align: center;
     padding-bottom: 2rem;
+    color: white;
   }
   h3 {
     font-size: 1rem;

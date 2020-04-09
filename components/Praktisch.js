@@ -15,7 +15,12 @@ const Praktisch = () => {
 };
 
 const PraktischDiv = styled.div`
-  background: #95f080bf;
+  font-weight: 200;
+  background: var(--background-dark);
+  color: white;
+  h2 {
+    font-weight: 400;
+  }
 `;
 
 export default Praktisch;

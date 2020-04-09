@@ -65,7 +65,7 @@ const Formules = () => {
 };
 
 const FormulesDiv = styled.div`
-  background: #22f080bf;
+  background: var(--background-white);
 `;
 
 export default Formules;

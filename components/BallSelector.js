@@ -51,7 +51,7 @@ const Wrap = styled.div`
   }
 `;
 const SelectBalls = styled.div`
-  height: 40px;
+  height: 45px;
   width: 150px;
   /* outline: 1px solid; */
   border: 3px solid black;
@@ -64,14 +64,16 @@ const SelectBalls = styled.div`
   margin-bottom: 1rem;
 
   button {
-    background: green;
+    background: var(--background-dark);
     width: 30%;
-    cursor: pointer;
     outline: none;
     border: none;
     height: 100%;
     font-size: inherit;
     font-family: inherit;
+  }
+  button:not([disabled]) {
+    cursor: pointer;
   }
 `;
 const NumberOfBalls = styled.span``;
