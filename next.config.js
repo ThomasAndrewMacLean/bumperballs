@@ -15,6 +15,7 @@ module.exports = {
   publicRuntimeConfig: {
     SENTRY: process.env.SENTRY,
   },
+  assetPrefix: isProduction ? '/bumperballs' : '',
   exportTrailingSlash: true,
   exportPathMap: function () {
     return {
