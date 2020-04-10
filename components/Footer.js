@@ -9,6 +9,7 @@ const Footer = () => {
         <T id="contactTitel"></T>
         <T id="telefoonnummer"></T>
         <T id="mail"></T>
+        <T id="adres"></T>
       </div>
       <div className="right">Made with ❤️ 2020 ©</div>
     </FooterWrap>

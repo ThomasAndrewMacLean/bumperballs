@@ -46,7 +46,7 @@ const GameDiv = styled.div`
   li {
     width: 30%;
     background-color: #fff;
-    border: 3px solid black;
+    border:  var(--border);
     /* box-shadow: 3px 3px 6px 0px #531bad1a; */
     text-align: center;
     padding: 1rem;

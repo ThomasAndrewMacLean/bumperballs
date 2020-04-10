@@ -54,7 +54,7 @@ const SelectBalls = styled.div`
   height: 45px;
   width: 150px;
   /* outline: 1px solid; */
-  border: 3px solid black;
+  border: var(--border);
   border-radius: 50px;
   background: white;
   overflow: hidden;
