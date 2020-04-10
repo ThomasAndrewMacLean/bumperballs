@@ -1,5 +1,6 @@
 require('dotenv').config();
 //const withCSS = require('@zeit/next-css');
+const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const prefix = isProduction ? '/bumperballs' : '';
@@ -15,11 +16,20 @@ module.exports = {
   publicRuntimeConfig: {
     SENTRY: process.env.SENTRY,
   },
-  assetPrefix: isProduction ? '/bumperballs' : '',
+  assetPrefix: prefix,
   exportTrailingSlash: true,
   exportPathMap: function () {
     return {
       '/': { page: '/' },
     };
+  },
+  webpack: (config) => {
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'process.env.ASSET_PREFIX': JSON.stringify(prefix),
+      })
+    );
+
+    return config;
   },
 };
