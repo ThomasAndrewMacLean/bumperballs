@@ -14,9 +14,9 @@ const IndexPage = () => {
   const { showModal } = useStore();
   return (
     <Main>
-      <Head>
+      {/* <Head>
         <link rel="stylesheet" href="style.css" />
-      </Head>
+      </Head> */}
       <Hero></Hero>
       {showModal && <Reservation></Reservation>}
       <FaqWrap>
