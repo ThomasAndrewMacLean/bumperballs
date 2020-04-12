@@ -19,40 +19,51 @@ const Reservation = () => {
         </h2>
         <div className="form-content">
           <div className="input-wrap">
+            <input required type="text" name="name" id="name" placeholder=" " />
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" />
           </div>
 
           <div className="input-wrap">
+            <input
+              required
+              type="email"
+              name="email"
+              id="email"
+              placeholder=" "
+            />
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" />
           </div>
 
           <div className="input-wrap">
+            <input type="text" name="straat" id="straat" placeholder=" " />
             <label htmlFor="straat">Straat + nr</label>
-            <input type="text" name="straat" id="straat" />
           </div>
           <div className="input-wrap">
+            <input type="text" name="stad" id="stad" placeholder=" " />
             <label htmlFor="stad">Postcode + stad</label>
-            <input type="text" name="stad" id="stad" />
           </div>
 
           <div className="input-wrap">
+            <input type="tel" name="telephone" id="telephone" placeholder=" " />
             <label htmlFor="telephone">Telefoon</label>
-            <input type="tel" name="telephone" id="telephone" />
           </div>
 
           <div className="input-wrap">
+            <textarea
+              type="text"
+              name="comments"
+              id="comments"
+              placeholder=" "
+            />
             <label htmlFor="comments">Opmerkingen</label>
-            <textarea type="text" name="comments" id="comments" />
           </div>
 
           <div className="input-wrap">
             <input
               className="button"
               type="submit"
-              name="telephone"
-              id="telephone"
+              name="submit"
+              id="submit"
               value="ok"
             />
           </div>
@@ -82,6 +93,7 @@ const Form = styled.form`
   overflow: hidden;
   width: 90vw;
   max-width: 750px;
+
   .form-titel {
     padding: 1rem 3rem;
     background: var(--background-dark);
@@ -93,7 +105,38 @@ const Form = styled.form`
   }
   .input-wrap {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    position: relative;
+
+    input {
+      font-size: inherit;
+      font-family: inherit;
+      line-height: 1.6rem;
+      margin-top: 1.6rem;
+      background: var(--background-modal);
+      outline: none;
+      padding: 3px;
+      border: none;
+    }
+
+    label {
+      color: #777;
+    }
+    input + label {
+      position: absolute;
+      left: 3px;
+      top: 1.7rem;
+      font-size: 1.3rem;
+      transition: all 300ms ease;
+    }
+
+    input:not(:placeholder-shown) + label,
+    input:focus + label {
+      top: 3px;
+      color: #222;
+      left: 0px;
+      font-size: 1rem;
+    }
   }
 `;
 
