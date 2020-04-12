@@ -19,12 +19,20 @@ const Reservation = () => {
         </h2>
         <div className="form-content">
           <div className="input-wrap">
-            <input required type="text" name="name" id="name" placeholder=" " />
+            <input
+              className="input"
+              required
+              type="text"
+              name="name"
+              id="name"
+              placeholder=" "
+            />
             <label htmlFor="name">Name</label>
           </div>
 
           <div className="input-wrap">
             <input
+              className="input"
               required
               type="email"
               name="email"
@@ -35,22 +43,41 @@ const Reservation = () => {
           </div>
 
           <div className="input-wrap">
-            <input type="text" name="straat" id="straat" placeholder=" " />
+            <input
+              className="input"
+              type="text"
+              name="straat"
+              id="straat"
+              placeholder=" "
+            />
             <label htmlFor="straat">Straat + nr</label>
           </div>
           <div className="input-wrap">
-            <input type="text" name="stad" id="stad" placeholder=" " />
+            <input
+              className="input"
+              type="text"
+              name="stad"
+              id="stad"
+              placeholder=" "
+            />
             <label htmlFor="stad">Postcode + stad</label>
           </div>
 
           <div className="input-wrap">
-            <input type="tel" name="telephone" id="telephone" placeholder=" " />
+            <input
+              className="input"
+              type="tel"
+              name="telephone"
+              id="telephone"
+              placeholder=" "
+            />
             <label htmlFor="telephone">Telefoon</label>
           </div>
 
           <div className="input-wrap">
             <textarea
               type="text"
+              className="input"
               name="comments"
               id="comments"
               placeholder=" "
@@ -94,6 +121,9 @@ const Form = styled.form`
   width: 90vw;
   max-width: 750px;
 
+  #submit {
+    margin-top: 2rem;
+  }
   .form-titel {
     padding: 1rem 3rem;
     background: var(--background-dark);
@@ -102,13 +132,14 @@ const Form = styled.form`
   }
   .form-content {
     padding: 3rem;
+    padding-top: 1.5rem;
   }
   .input-wrap {
     display: flex;
     flex-direction: column-reverse;
     position: relative;
 
-    input {
+    .input {
       font-size: inherit;
       font-family: inherit;
       line-height: 1.6rem;
@@ -122,7 +153,7 @@ const Form = styled.form`
     label {
       color: #777;
     }
-    input + label {
+    .input + label {
       position: absolute;
       left: 3px;
       top: 1.7rem;
@@ -130,8 +161,8 @@ const Form = styled.form`
       transition: all 300ms ease;
     }
 
-    input:not(:placeholder-shown) + label,
-    input:focus + label {
+    .input:not(:placeholder-shown) + label,
+    .input:focus + label {
       top: 3px;
       color: #222;
       left: 0px;
