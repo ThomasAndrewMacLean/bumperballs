@@ -20,4 +20,8 @@ export const [useStore] = create((set, get) => ({
     order[seize] = amount;
     return set(() => ({ order }));
   },
+  showToast: false,
+  setShowToast: (show) => {
+    return set(() => ({ showToast: show }));
+  },
 }));

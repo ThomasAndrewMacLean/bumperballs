@@ -11,7 +11,7 @@ import Summary from './Summary';
 import { calculateTotal } from '../utils';
 
 const Reservation = () => {
-  const { showPricesFor, order } = useStore();
+  const { showPricesFor, order, setShowToast } = useStore();
   const translationsFromContext = useContext(TranslationContext);
 
   const { setShowModal } = useStore();
@@ -54,6 +54,7 @@ const Reservation = () => {
       .then((x) => x.json())
       .then((y) => console.log(y));
 
+    setShowToast(true);
     setShowModal(false);
   };
   return (

@@ -5,6 +5,7 @@ import Faq from '../components/Faq';
 import Games from '../components/Games';
 import Map from '../components/Map';
 import Praktisch from '../components/Praktisch';
+import Toaster from '../components/Toaster';
 import Formules from '../components/Formules';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
@@ -13,7 +14,7 @@ import Reservation from '../components/Reservation';
 import { useStore } from '../store';
 
 const IndexPage = () => {
-  const { showModal } = useStore();
+  const { showModal, showToast } = useStore();
   return (
     <Main>
       <Head>
@@ -23,6 +24,7 @@ const IndexPage = () => {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </Head>
+      {showToast && <Toaster />}
       <Hero></Hero>
       {showModal && <Reservation></Reservation>}
       <FaqWrap className="topBottomPadding">
