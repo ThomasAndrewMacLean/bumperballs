@@ -314,6 +314,7 @@ const Form = styled.form`
       outline: none;
       padding: 3px;
       border: none;
+      border-radius: 0;
     }
 
     label {
