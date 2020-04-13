@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import T from './Translation';
+import Calendar from './Calendar';
 import { useStore } from '../store';
 
 const Reservation = () => {
@@ -36,6 +37,7 @@ const Reservation = () => {
             x
           </span>
         </h2>
+
         <div className="form-content">
           <div className="input-line">
             <div className="input-wrap half">
@@ -124,6 +126,8 @@ const Reservation = () => {
             <label htmlFor="comments">Opmerkingen</label>
           </div>
 
+          <Calendar />
+          
           <div className="input-wrap">
             <input
               className="button"
@@ -250,6 +254,10 @@ const Form = styled.form`
       left: 0px;
       font-size: 1rem;
     }
+  }
+
+  form:invalid {
+    background: red;
   }
 `;
 

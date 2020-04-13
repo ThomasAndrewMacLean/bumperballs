@@ -24,6 +24,7 @@
     "@zeit/next-css": "^1.0.1",
     "airtable": "^0.8.1",
     "babel-plugin-styled-components": "^1.10.7",
+    "dayjs": "^1.8.24",
     "dotenv": "^8.2.0",
     "marked": "^0.8.2",
     "next": "^9.3.3",

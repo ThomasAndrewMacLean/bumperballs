@@ -23,6 +23,10 @@ body {
   font-size: 18px;
   background: white;
 }
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
+}
 
 .content {
   padding: 0 4rem;
