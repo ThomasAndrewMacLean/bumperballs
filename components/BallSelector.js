@@ -47,7 +47,7 @@ const BallSelector = ({ addToOrder, max, min, step, start, price, seize }) => {
       </SelectBalls>
 
       <div>
-        {numberOfBalls} bumperballen {seize}: {numberOfBalls * price}€
+        {numberOfBalls} bumperballen {seize}: €{numberOfBalls * price}
       </div>
     </Wrap>
   );

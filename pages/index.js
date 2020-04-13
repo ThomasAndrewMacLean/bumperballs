@@ -21,7 +21,7 @@ const IndexPage = () => {
       </Head>
       <Hero></Hero>
       {showModal && <Reservation></Reservation>}
-      <FaqWrap>
+      <FaqWrap className="topBottomPadding">
         <h2 className="content faqTitel">
           <T id="faq-titel" />
         </h2>
@@ -47,7 +47,6 @@ const Main = styled.main`
 const FaqWrap = styled.div`
   .faqTitel {
     padding-bottom: 1rem;
-    padding-top: 2rem;
   }
   padding-bottom: 4rem;
 `;

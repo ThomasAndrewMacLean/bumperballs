@@ -1,19 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import T from './Translation';
-import { useStore } from '../store';
+import CTA from './CTA';
 
 const Hero = () => {
-  const { setShowModal } = useStore();
   return (
     <HeroDiv className="hero-padding">
       <Title>
         <T id="site-titel"></T>
       </Title>
       <div className="cta">
-        <button onClick={() => setShowModal(true)}>
-          <T id="site-cta"></T>
-        </button>
+        <CTA></CTA>
       </div>
     </HeroDiv>
   );
@@ -36,27 +33,7 @@ const HeroDiv = styled.div`
     right: 10%;
     padding-top: 10rem;
   }
-  button {
-    border: var(--border);
-    background: var(--background-dark);
-    color: var(--background-white);
-    font-size: inherit;
-    font-family: inherit;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    outline: none;
-
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    transition: all 300ms ease;
-  }
-  button:hover {
-    background: var(--background-white);
-    color: var(--background-dark);
-  }
+  
 `;
 
 const Title = styled.h1`

@@ -7,6 +7,9 @@ const Footer = () => {
     <FooterWrap className="topBottomPadding">
       <div className="left">
         <T id="contactTitel"></T>
+        <T id="site-titel"></T>
+        <T id="btwNummer"></T>
+
         <T id="telefoonnummer"></T>
         <T id="mail"></T>
         <T id="adres"></T>

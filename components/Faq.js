@@ -38,7 +38,6 @@ const Wrapper = styled.div`
     margin-left: 25px;
     text-decoration: none;
   }
-  
 `;
 
 export default Faq;

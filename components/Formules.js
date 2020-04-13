@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import T from './Translation';
 import BallSelector from './BallSelector';
 import { TranslationContext } from '../pages/_app';
+import CTA from './CTA';
 
 const Formules = () => {
   const translationsFromContext = useContext(TranslationContext);
@@ -59,6 +60,10 @@ const Formules = () => {
           seize="150 cm"
         ></BallSelector>
         <T id={'formulesAnders'}></T>
+
+        <div className="cta-formules">
+          <CTA></CTA>
+        </div>
       </div>
     </FormulesDiv>
   );
@@ -66,6 +71,12 @@ const Formules = () => {
 
 const FormulesDiv = styled.div`
   background: var(--background-white);
+
+  .cta-formules {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
 `;
 
 export default Formules;

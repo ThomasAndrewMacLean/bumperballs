@@ -7,6 +7,8 @@ import BallSelector from './BallSelector';
 import { useStore } from '../store';
 import { TranslationContext } from '../pages/_app';
 import { SAVE_RESERVATION_URL } from '../constants';
+import Summary from './Summary';
+import { calculateTotal } from '../utils';
 
 const Reservation = () => {
   const { showPricesFor, order } = useStore();
@@ -32,10 +34,21 @@ const Reservation = () => {
         Straat: getValue('straat'),
         Postcode: getValue('postcode'),
         Stad: getValue('stad'),
+        Addres: `${getValue('straat')} ${getValue('postcode')} ${getValue(
+          'stad'
+        )}`,
         Telefoon: getValue('telephone'),
         Opmerkingen: getValue('comments'),
         Datum: getValue('picked-date'),
         Bestelling: JSON.stringify(order),
+        TotaalPrijs: calculateTotal(
+          translationsFromContext,
+          showPricesFor,
+          order
+        ),
+        Summary: `Groot: ${order['150 cm']}, Klein: ${
+          order['120 cm']
+        }. €${calculateTotal(translationsFromContext, showPricesFor, order)}`,
       }),
     })
       .then((x) => x.json())
@@ -188,6 +201,8 @@ const Reservation = () => {
                 )}
                 seize="150 cm"
               ></BallSelector>
+
+              <Summary></Summary>
             </>
           )}
           <div className="input-wrap">
@@ -204,6 +219,7 @@ const Reservation = () => {
     </ReservationWrap>
   );
 };
+
 const ReservationWrap = styled.div`
   position: fixed;
   background: var(--background-modal);
