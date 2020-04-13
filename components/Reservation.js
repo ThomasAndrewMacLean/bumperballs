@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import T from './Translation';
 import Calendar from './Calendar';
@@ -8,13 +8,37 @@ import { useStore } from '../store';
 import { TranslationContext } from '../pages/_app';
 
 const Reservation = () => {
-  const { showPricesFor } = useStore();
+  const { showPricesFor, order } = useStore();
   const translationsFromContext = useContext(TranslationContext);
 
   const { setShowModal } = useStore();
 
+  const getValue = (id) => {
+    return document.getElementById(id).value;
+  };
   const submitForm = (e) => {
     e.preventDefault();
+
+    fetch('https://europe-west1-bms-rent.cloudfunctions.net/addReservation', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        Naam: getValue('name'),
+        Email: getValue('email'),
+        Straat: getValue('straat'),
+        Postcode: getValue('postcode'),
+        Stad: getValue('stad'),
+        Telefoon: getValue('telephone'),
+        Opmerkingen: getValue('comments'),
+        Datum: getValue('picked-date'),
+        Bestelling: JSON.stringify(order),
+      }),
+    })
+      .then((x) => x.json())
+      .then((y) => console.log(y));
 
     setShowModal(false);
   };
@@ -138,6 +162,7 @@ const Reservation = () => {
             <>
               <BallSelector
                 min={4}
+                addToOrder
                 max={12}
                 step={2}
                 start={0}
@@ -152,6 +177,7 @@ const Reservation = () => {
               <BallSelector
                 min={4}
                 max={14}
+                addToOrder
                 step={2}
                 start={4}
                 price={parseInt(

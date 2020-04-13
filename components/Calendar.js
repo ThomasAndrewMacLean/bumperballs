@@ -33,6 +33,21 @@ const Calender = () => {
     'november',
     'december',
   ];
+
+  const maandenEngels = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
   const [month, setMonth] = useState(dayjs().month());
   // plus min gebruiken we om te zien in welke richting we gaan
   // als we switchen moeten we eentje overslaan
@@ -46,13 +61,7 @@ const Calender = () => {
     if (dayInWeek === 6) {
       setShowPricesFor('Weekend');
       inputRef.current.value =
-        parseInt(index + 1) +
-        ', ' +
-        parseInt(index + 2) +
-        ' ' +
-        maanden[month] +
-        ' ' +
-        year;
+        parseInt(index + 1) + ' ' + maandenEngels[month] + ' ' + year;
       setAddedDays([index, index + 1]);
       return;
     }
@@ -60,20 +69,14 @@ const Calender = () => {
       setShowPricesFor('Weekend');
 
       inputRef.current.value =
-        parseInt(index) +
-        ', ' +
-        parseInt(index + 1) +
-        ' ' +
-        maanden[month] +
-        ' ' +
-        year;
+        parseInt(index) + ' ' + maandenEngels[month] + ' ' + year;
       setAddedDays([index, index - 1]);
       return;
     }
     setShowPricesFor('Woensdag');
 
     inputRef.current.value =
-      parseInt(index + 1) + ' ' + maanden[month] + ' ' + year;
+      parseInt(index + 1) + ' ' + maandenEngels[month] + ' ' + year;
     setAddedDays([index]);
   };
 

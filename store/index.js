@@ -1,6 +1,6 @@
 import create from 'zustand';
 
-export const [useStore] = create((set) => ({
+export const [useStore] = create((set, get) => ({
   showModal: false,
   setShowModal: (show) => {
     if (show) {
@@ -13,5 +13,11 @@ export const [useStore] = create((set) => ({
   showPricesFor: '',
   setShowPricesFor: (day) => {
     return set(() => ({ showPricesFor: day }));
+  },
+  order: { '150 cm': 4, '120 cm': 0 },
+  setOrder: (amount, seize) => {
+    const { order } = get();
+    order[seize] = amount;
+    return set(() => ({ order }));
   },
 }));

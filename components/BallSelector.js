@@ -1,32 +1,46 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { useStore } from '../store';
 
-const BallSelector = ({ max, min, step, start, price, seize }) => {
+const BallSelector = ({ addToOrder, max, min, step, start, price, seize }) => {
+  const { setOrder } = useStore();
   const [numberOfBalls, setNumberOfBalls] = useState(start);
 
   const removeBalls = () => {
     if (numberOfBalls === min) {
+      if (addToOrder) setOrder(0, seize);
       setNumberOfBalls(0);
     } else {
+      if (addToOrder) setOrder(numberOfBalls - step, seize);
       setNumberOfBalls(numberOfBalls - step);
     }
   };
   const addBalls = () => {
     if (numberOfBalls === 0) {
+      if (addToOrder) setOrder(min, seize);
       setNumberOfBalls(min);
     } else {
+      if (addToOrder) setOrder(numberOfBalls + step, seize);
       setNumberOfBalls(numberOfBalls + step);
     }
   };
   return (
     <Wrap>
       <SelectBalls>
-        <button disabled={numberOfBalls === 0} onClick={removeBalls}>
+        <button
+          type="button"
+          disabled={numberOfBalls === 0}
+          onClick={removeBalls}
+        >
           -
         </button>
         <NumberOfBalls>{numberOfBalls}</NumberOfBalls>
-        <button disabled={numberOfBalls === max} onClick={addBalls}>
+        <button
+          type="button"
+          disabled={numberOfBalls === max}
+          onClick={addBalls}
+        >
           +
         </button>
       </SelectBalls>
@@ -84,5 +98,6 @@ BallSelector.propTypes = {
   start: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   seize: PropTypes.string.isRequired,
+  addToOrder: PropTypes.bool,
 };
 export default BallSelector;
