@@ -7,6 +7,7 @@ import Praktisch from '../components/Praktisch';
 import Formules from '../components/Formules';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
+import T from '../components/Translation';
 import Reservation from '../components/Reservation';
 import { useStore } from '../store';
 
@@ -14,13 +15,15 @@ const IndexPage = () => {
   const { showModal } = useStore();
   return (
     <Main>
-      {/* <Head>
-        <link rel="stylesheet" href="style.css" />
-      </Head> */}
+      <Head>
+        <title>BMS Rent</title>
+      </Head>
       <Hero></Hero>
       {showModal && <Reservation></Reservation>}
       <FaqWrap>
-        <h2 className="content faqTitel">Wat, waar, hoe?</h2>
+        <h2 className="content faqTitel">
+          <T id="faq-titel" />
+        </h2>
         <Faq q="watZijnBumperballen"></Faq>
         <Faq q="waarGebruiken"></Faq>
         <Faq q="voorWelkeGelegenheden"></Faq>

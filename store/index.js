@@ -1,7 +1,7 @@
 import create from 'zustand';
 
 export const [useStore] = create((set) => ({
-  showModal: true,
+  showModal: false,
   setShowModal: (show) => {
     if (show) {
       document.querySelector('body').classList.add('modal-open');
@@ -9,5 +9,9 @@ export const [useStore] = create((set) => ({
       document.querySelector('body').classList.remove('modal-open');
     }
     return set(() => ({ showModal: show }));
+  },
+  showPricesFor: '',
+  setShowPricesFor: (day) => {
+    return set(() => ({ showPricesFor: day }));
   },
 }));

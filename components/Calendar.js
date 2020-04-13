@@ -1,8 +1,10 @@
 import React, { useState, useRef } from 'react';
 import dayjs from 'dayjs';
 import styled from 'styled-components';
+import { useStore } from '../store';
 
 const Calender = () => {
+  const { setShowPricesFor } = useStore();
   const inputRef = useRef(null);
   const [days, setDays] = useState(
     new Array(
@@ -42,6 +44,7 @@ const Calender = () => {
   const addDate = (dayInWeek, index) => {
     if (!boekbareDagen.includes(dayInWeek)) return;
     if (dayInWeek === 6) {
+      setShowPricesFor('Weekend');
       inputRef.current.value =
         parseInt(index + 1) +
         ', ' +
@@ -54,6 +57,8 @@ const Calender = () => {
       return;
     }
     if (dayInWeek === 0) {
+      setShowPricesFor('Weekend');
+
       inputRef.current.value =
         parseInt(index) +
         ', ' +
@@ -65,6 +70,7 @@ const Calender = () => {
       setAddedDays([index, index - 1]);
       return;
     }
+    setShowPricesFor('Woensdag');
 
     inputRef.current.value =
       parseInt(index + 1) + ' ' + maanden[month] + ' ' + year;
@@ -73,6 +79,8 @@ const Calender = () => {
 
   const previousMonth = () => {
     setAddedDays([]);
+    setShowPricesFor('');
+
     inputRef.current.value = '';
     setMin(true);
     let tempOff;
@@ -110,6 +118,7 @@ const Calender = () => {
 
   const nextMonth = () => {
     setAddedDays([]);
+    setShowPricesFor('');
     inputRef.current.value = '';
 
     let tempOff;

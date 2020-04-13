@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import T from './Translation';
 import Calendar from './Calendar';
+import BallSelector from './BallSelector';
+
 import { useStore } from '../store';
+import { TranslationContext } from '../pages/_app';
 
 const Reservation = () => {
+  const { showPricesFor } = useStore();
+  const translationsFromContext = useContext(TranslationContext);
+
   const { setShowModal } = useStore();
 
   const submitForm = (e) => {
@@ -120,6 +126,7 @@ const Reservation = () => {
               type="text"
               className="input"
               name="comments"
+              rows="5"
               id="comments"
               placeholder=" "
             />
@@ -127,7 +134,35 @@ const Reservation = () => {
           </div>
 
           <Calendar />
-          
+          {showPricesFor && (
+            <>
+              <BallSelector
+                min={4}
+                max={12}
+                step={2}
+                start={0}
+                price={parseInt(
+                  translationsFromContext.find(
+                    (t) => t.id === 'prijs' + showPricesFor + 'Klein'
+                  ).NL
+                )}
+                seize="120 cm"
+              ></BallSelector>
+
+              <BallSelector
+                min={4}
+                max={14}
+                step={2}
+                start={4}
+                price={parseInt(
+                  translationsFromContext.find(
+                    (t) => t.id === 'prijs' + showPricesFor + 'Groot'
+                  ).NL
+                )}
+                seize="150 cm"
+              ></BallSelector>
+            </>
+          )}
           <div className="input-wrap">
             <input
               className="button"
@@ -189,6 +224,9 @@ const Form = styled.form`
   .form-content {
     padding: 3rem;
     padding-top: 1.5rem;
+    @media (max-width: 500px) {
+      padding: 1rem;
+    }
   }
   .input-wrap.half {
     width: calc(50% - 0.5rem);
@@ -256,6 +294,9 @@ const Form = styled.form`
     }
   }
 
+  textarea {
+    resize: none;
+  }
   form:invalid {
     background: red;
   }
