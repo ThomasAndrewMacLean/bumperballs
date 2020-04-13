@@ -315,6 +315,7 @@ const Form = styled.form`
       outline: none;
       padding: 3px;
       border: none;
+      border-bottom: var(--border);
       border-radius: 0;
     }
 
