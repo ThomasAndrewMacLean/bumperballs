@@ -289,6 +289,9 @@ const Form = styled.form`
       width: 100%;
     }
   }
+  input {
+    -webkit-appearance: none;
+  }
 
   .input-line {
     display: flex;

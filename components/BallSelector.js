@@ -105,6 +105,7 @@ const SelectBalls = styled.div`
   }
 `;
 const NumberOfBalls = styled.span``;
+
 BallSelector.propTypes = {
   max: PropTypes.number.isRequired,
   min: PropTypes.number.isRequired,

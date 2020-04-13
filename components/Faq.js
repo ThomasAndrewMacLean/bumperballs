@@ -1,6 +1,7 @@
 import React from 'react';
 import T from './Translation';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Faq = ({ q, open }) => {
   return (
@@ -39,5 +40,10 @@ const Wrapper = styled.div`
     text-decoration: none;
   }
 `;
+
+Faq.propTypes = {
+  q: PropTypes.string.isRequired,
+  open: PropTypes.bool,
+};
 
 export default Faq;

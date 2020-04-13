@@ -12,22 +12,6 @@ const Summary = () => {
   return (
     <SummaryDiv>
       <ul>
-        {/* <li>
-          Klein * {order['120 cm']} : €
-          {parseInt(
-            translationsFromContext.find(
-              (t) => t.id === 'prijs' + showPricesFor + 'Klein'
-            ).NL
-          ) * order['120 cm']}
-        </li>
-        <li>
-          Groot * {order['150 cm']} : €
-          {parseInt(
-            translationsFromContext.find(
-              (t) => t.id === 'prijs' + showPricesFor + 'Groot'
-            ).NL
-          ) * order['150 cm']}
-        </li> */}
         <li>
           Waarborg : €
           {(order['120 cm'] + order['150 cm']) *
