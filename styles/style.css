@@ -3,6 +3,7 @@
 :root {
   --background-modal: rgba(0, 139, 139, 0.295);
   --background-dark: darkcyan;
+  --background-grey: #8080806e;
   --background-white: #fff;
   --border: 3px solid black;
 }
@@ -33,6 +34,7 @@ body.modal-open {
   margin: auto;
   max-width: 800px;
 }
+
 .topBottomPadding {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -72,4 +74,18 @@ h2 {
 .button:hover {
   background: var(--background-white) !important;
   color: var(--background-dark) !important;
+}
+
+@media (max-width: 500px) {
+  .content {
+    padding: 0 2rem;
+  }
+  ul {
+    margin-left: 1.5rem;
+  }
+}
+@media (max-width: 350px) {
+  .content {
+    padding: 0 1rem;
+  }
 }

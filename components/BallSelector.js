@@ -37,6 +37,7 @@ const BallSelector = ({ addToOrder, max, min, step, start, price, seize }) => {
         </button>
         <NumberOfBalls>{numberOfBalls}</NumberOfBalls>
         <button
+          className="bg-hack"
           type="button"
           disabled={numberOfBalls === max}
           onClick={addBalls}
@@ -88,6 +89,19 @@ const SelectBalls = styled.div`
   }
   button:not([disabled]) {
     cursor: pointer;
+  }
+  .bg-hack {
+    position: relative;
+  }
+  .bg-hack::after {
+    content: '';
+    display: block;
+    background: var(--background-dark);
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    top: 0;
+    right: -5px;
   }
 `;
 const NumberOfBalls = styled.span``;

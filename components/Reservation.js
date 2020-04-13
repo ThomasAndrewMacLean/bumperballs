@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import T from './Translation';
 import Calendar from './Calendar';
@@ -6,6 +6,7 @@ import BallSelector from './BallSelector';
 
 import { useStore } from '../store';
 import { TranslationContext } from '../pages/_app';
+import { SAVE_RESERVATION_URL } from '../constants';
 
 const Reservation = () => {
   const { showPricesFor, order } = useStore();
@@ -19,7 +20,7 @@ const Reservation = () => {
   const submitForm = (e) => {
     e.preventDefault();
 
-    fetch('https://europe-west1-bms-rent.cloudfunctions.net/addReservation', {
+    fetch(SAVE_RESERVATION_URL, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

@@ -11,13 +11,14 @@ const Footer = () => {
         <T id="mail"></T>
         <T id="adres"></T>
       </div>
-      <div className="right">Made with ❤️ 2020 ©</div>
+      <div className="right">Made with ❤️ 2020 © Westerling &amp; MacLean</div>
     </FooterWrap>
   );
 };
 
 const FooterWrap = styled.footer`
   font-size: 1rem;
+  padding: 4rem 2rem;
   font-weight: 200;
   h2 {
     text-decoration: none;
@@ -28,8 +29,18 @@ const FooterWrap = styled.footer`
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
+  flex-wrap: wrap;
 
-  background: #8080806e;
+  .left,
+  .right {
+    max-width: 50%;
+    min-width: 200px;
+  }
+
+  .right {
+    padding-top: 2rem;
+  }
+  background: var(--background-grey);
 `;
 
 export default Footer;

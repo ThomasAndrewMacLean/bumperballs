@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import Faq from '../components/Faq';
 import Games from '../components/Games';
+import Map from '../components/Map';
 import Praktisch from '../components/Praktisch';
 import Formules from '../components/Formules';
 import Footer from '../components/Footer';
@@ -33,7 +34,7 @@ const IndexPage = () => {
 
       <Formules></Formules>
       <Praktisch></Praktisch>
-
+      <Map></Map>
       <Footer></Footer>
     </Main>
   );
