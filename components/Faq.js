@@ -2,10 +2,10 @@ import React from 'react';
 import T from './Translation';
 import styled from 'styled-components';
 
-const Faq = ({ q }) => {
+const Faq = ({ q, open }) => {
   return (
     <Wrapper className="content">
-      <details>
+      <details open={open}>
         <summary>
           <T id={q + 'Titel'} />
         </summary>

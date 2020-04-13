@@ -25,7 +25,7 @@ const IndexPage = () => {
         <h2 className="content faqTitel">
           <T id="faq-titel" />
         </h2>
-        <Faq q="watZijnBumperballen"></Faq>
+        <Faq open q="watZijnBumperballen"></Faq>
         <Faq q="waarGebruiken"></Faq>
         <Faq q="voorWelkeGelegenheden"></Faq>
       </FaqWrap>
