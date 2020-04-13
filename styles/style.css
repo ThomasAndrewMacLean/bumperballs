@@ -12,6 +12,8 @@
   -webkit-tap-highlight-color: transparent;
   padding: 0;
   box-sizing: border-box;
+
+  touch-action: manipulation;
 }
 
 html,
