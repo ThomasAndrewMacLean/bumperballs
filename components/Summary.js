@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { useStore } from '../store';
-import T from './Translation';
+// import T from './Translation';
 import { TranslationContext } from '../pages/_app';
 import { calculateTotal } from '../utils';
 

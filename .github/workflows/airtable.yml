@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages From Airtable
 on: repository_dispatch
 jobs:
   build-and-deploy:
