@@ -12,34 +12,55 @@ const Reservation = () => {
     setShowModal(false);
   };
   return (
-    <ReservationWrap className="topBottomPadding">
-      <Form action="" onSubmit={submitForm}>
+    <ReservationWrap
+      className="topBottomPadding"
+      onClick={() => {
+        setShowModal(false);
+      }}
+    >
+      <Form
+        action=""
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        onSubmit={submitForm}
+      >
         <h2 className="form-titel">
           <T id="site-cta" />
+          <span
+            className="close-button"
+            onClick={() => {
+              setShowModal(false);
+            }}
+          >
+            x
+          </span>
         </h2>
         <div className="form-content">
-          <div className="input-wrap">
-            <input
-              className="input"
-              required
-              type="text"
-              name="name"
-              id="name"
-              placeholder=" "
-            />
-            <label htmlFor="name">Name</label>
-          </div>
+          <div className="input-line">
+            <div className="input-wrap half">
+              <input
+                className="input"
+                required
+                type="text"
+                name="name"
+                id="name"
+                placeholder=" "
+              />
+              <label htmlFor="name">Naam</label>
+            </div>
 
-          <div className="input-wrap">
-            <input
-              className="input"
-              required
-              type="email"
-              name="email"
-              id="email"
-              placeholder=" "
-            />
-            <label htmlFor="email">Email</label>
+            <div className="input-wrap half">
+              <input
+                className="input"
+                required
+                type="email"
+                name="email"
+                id="email"
+                placeholder=" "
+              />
+              <label htmlFor="email">Email</label>
+            </div>
           </div>
 
           <div className="input-wrap">
@@ -48,19 +69,36 @@ const Reservation = () => {
               type="text"
               name="straat"
               id="straat"
+              required
               placeholder=" "
             />
             <label htmlFor="straat">Straat + nr</label>
           </div>
-          <div className="input-wrap">
-            <input
-              className="input"
-              type="text"
-              name="stad"
-              id="stad"
-              placeholder=" "
-            />
-            <label htmlFor="stad">Postcode + stad</label>
+
+          <div className="input-line">
+            <div className="input-wrap kwart">
+              <input
+                className="input"
+                type="text"
+                required
+                name="postcode"
+                id="postcode"
+                placeholder=" "
+              />
+              <label htmlFor="postcode">Postcode</label>
+            </div>
+
+            <div className="input-wrap driekwart">
+              <input
+                className="input"
+                type="text"
+                required
+                name="stad"
+                id="stad"
+                placeholder=" "
+              />
+              <label htmlFor="stad">Stad</label>
+            </div>
           </div>
 
           <div className="input-wrap">
@@ -69,6 +107,7 @@ const Reservation = () => {
               type="tel"
               name="telephone"
               id="telephone"
+              required
               placeholder=" "
             />
             <label htmlFor="telephone">Telefoon</label>
@@ -117,9 +156,10 @@ const Form = styled.form`
   background: var(--background-white);
   border: var(--border);
   border-radius: 50px;
-  overflow: hidden;
+  overflow: scroll;
   width: 90vw;
   max-width: 750px;
+  max-height: 80vh;
 
   #submit {
     margin-top: 2rem;
@@ -129,13 +169,51 @@ const Form = styled.form`
     background: var(--background-dark);
     color: var(--background-white);
     border-bottom: var(--border);
+    display: flex;
+    justify-content: space-between;
+    .close-button {
+      cursor: pointer;
+      transition: transform 300ms ease;
+    }
+    .close-button:hover {
+      transform: scale(1.2);
+    }
+  }
+  h2.form-titel {
+    text-decoration: none;
   }
   .form-content {
     padding: 3rem;
     padding-top: 1.5rem;
   }
-  .input-wrap {
+  .input-wrap.half {
+    width: calc(50% - 0.5rem);
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+  }
+  .input-wrap.kwart {
+    width: calc(25% - 0.5rem);
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+  }
+  .input-wrap.driekwart {
+    width: calc(75% - 0.5rem);
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+  }
+
+  .input-line {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .input-wrap {
+    width: 100%;
+    display: inline-flex;
     flex-direction: column-reverse;
     position: relative;
 
@@ -159,6 +237,10 @@ const Form = styled.form`
       top: 1.7rem;
       font-size: 1.3rem;
       transition: all 300ms ease;
+    }
+
+    .input[required] + label::after {
+      content: '*';
     }
 
     .input:not(:placeholder-shown) + label,
