@@ -37,7 +37,7 @@ const Games = () => {
 const Clip = styled.div`
   background: ${(props) => `url(${props.pic}) no-repeat center center fixed`};
   background-color: var(--background-dark);
-  background-blend-mode: multiply;
+  background-blend-mode: luminosity;
   background-size: cover;
 
   clip-path: url(#wave);
