@@ -26,13 +26,21 @@ const HeroDiv = styled.div`
     color: white;
     font-size: 3rem;
     text-shadow: 0 0 2px #8e6464;
+    font-weight: 700;
+    @media (max-width: 500px) {
+      display: flex;
+      justify-content: center;
+
+      padding-top: 7rem;
+    }
   }
   background: ${(props) => `url(${props.pic}) no-repeat center center`};
   background-color: var(--background-dark);
   background-blend-mode: luminosity;
 
   background-size: cover;
-  height: 60vh;
+  height: 75vh;
+  position: relative;
 
   .hero-padding {
     width: 80vw;
@@ -42,7 +50,16 @@ const HeroDiv = styled.div`
   .cta {
     position: absolute;
     right: 10%;
-    padding-top: 10rem;
+    bottom: 25%;
+
+    @media (max-width: 500px) {
+      position: inherit;
+      display: flex;
+      justify-content: center;
+      right: auto;
+      bottom: auto;
+      padding-top: 2rem;
+    }
   }
 `;
 
