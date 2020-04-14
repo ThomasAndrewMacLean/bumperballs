@@ -68,6 +68,8 @@ const HeroDiv = styled.div`
 const Title = styled.h1`
   img {
     width: 250px;
+    position: sticky;
+    top: 0;
   }
   text-shadow: 0 0 2px var(--background-dark);
 `;

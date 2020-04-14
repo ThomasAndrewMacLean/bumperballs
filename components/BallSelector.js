@@ -90,6 +90,10 @@ const SelectBalls = styled.div`
   button:not([disabled]) {
     cursor: pointer;
   }
+
+  button:not([disabled]):hover {
+    background: var(--background-modal);
+  }
   .bg-hack {
     position: relative;
   }
@@ -102,6 +106,10 @@ const SelectBalls = styled.div`
     height: 100%;
     top: 0;
     right: -5px;
+  }
+
+  .bg-hack:hover::after {
+    background: none;
   }
 `;
 const NumberOfBalls = styled.span``;

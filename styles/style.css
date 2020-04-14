@@ -4,13 +4,56 @@
   /* ALSO Set the theme-color meta tag in index.js HEAD section */
   --background-modal: rgba(0, 139, 139, 0.295);
   --background-dark: rgba(0, 139, 139, 1);
-  --background-grey: rgba(0, 139, 139, 0.295);
   --background-white: #fff;
   --border: 3px solid black;
-
+  /* 
+  --background-modal: rgba(0, 139, 139, 0.295);
+  --background-dark: rgba(0, 139, 139, 1); */
   /* --background-modal: rgba(128, 172, 230, 0.295);
   --background-dark: rgb(128, 172, 230);
   --background-grey: rgba(128, 172, 230, 0.295); */
+
+  --color1: #ff0000;
+  --color2: #62b4d5;
+  --color3: #a0d767;
+  --color4: #f4e01d;
+  --stripes: linear-gradient(
+    45deg,
+    #ff0000 12.5%,
+    #62b4d5 12.5%,
+    #62b4d5 25%,
+    #a0d767 25%,
+    #a0d767 37.5%,
+    #f4e01d 37.5%,
+    #f4e01d 50%,
+    #ff0000 50%,
+    #ff0000 62.5%,
+    #62b4d5 62.5%,
+    #62b4d5 75%,
+    #a0d767 75%,
+    #a0d767 87.5%,
+    #f4e01d 87.5%,
+    #f4e01d 100%
+  );
+  --stripes2: linear-gradient(
+    45deg,
+    #f4e01d 12.5%,
+    #a0d767 12.5%,
+    #a0d767 25%,
+    #ff0000 25%,
+    #ff0000 37.5%,
+    #62b4d5 37.5%,
+    #62b4d5 50%,
+    #f4e01d 50%,
+    #f4e01d 62.5%,
+    #a0d767 62.5%,
+    #a0d767 75%,
+    #ff0000 75%,
+    #ff0000 87.5%,
+    #62b4d5 87.5%,
+    #62b4d5 100%
+  );
+  --white-stripes: linear-gradient(45deg, #fff 0%, #fff 100%);
 }
 * {
   margin: 0;
@@ -63,7 +106,7 @@ h2 {
 
 .button {
   border: var(--border) !important;
-  background: var(--background-dark);
+  background-color: var(--background-dark);
   color: var(--background-white);
   font-size: inherit;
   font-family: inherit;
@@ -76,20 +119,33 @@ h2 {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  transition: all 300ms ease;
-}
-.button:hover {
-  background: var(--background-white);
-  color: var(--background-dark);
+  transition: background-image 300ms ease;
 }
 .button.inverse {
-  background: var(--background-white);
+  background: var(--white-stripes);
   color: var(--background-dark);
 }
-.button.inverse:hover {
+.button:hover {
+  background: var(--stripes);
+  color: var(--background-white);
+  text-shadow: 0 0 2px #333;
+  animation: bg 1s;
+  animation-delay: 250ms;
+  animation-iteration-count: infinite;
+}
+@keyframes bg {
+  0% {
+    background: var(--stripes);
+  }
+
+  50% {
+    background: var(--stripes2);
+  }
+}
+/* .button.inverse:hover {
   background: var(--background-dark);
   color: var(--background-white);
-}
+} */
 @media (max-width: 500px) {
   .content {
     padding: 0 2rem;

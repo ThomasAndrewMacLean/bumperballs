@@ -43,7 +43,7 @@ const FooterWrap = styled.footer`
   .right {
     padding-top: 2rem;
   }
-  background: var(--background-grey);
+  background: var(--background-modal);
 `;
 
 export default Footer;

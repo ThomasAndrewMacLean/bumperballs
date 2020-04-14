@@ -12,6 +12,7 @@ import Hero from '../components/Hero';
 import T from '../components/Translation';
 import Reservation from '../components/Reservation';
 import { useStore } from '../store';
+import Spacer from '../components/Spacer';
 
 const IndexPage = () => {
   const { showModal, showToast } = useStore();
@@ -39,7 +40,7 @@ const IndexPage = () => {
       </FaqWrap>
 
       <Games></Games>
-
+      <Spacer />
       <Formules></Formules>
       <Praktisch></Praktisch>
       <Map></Map>

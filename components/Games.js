@@ -35,6 +35,7 @@ const Games = () => {
 };
 
 const Clip = styled.div`
+  /* background-image: var(--stripes); */
   background: ${(props) => `url(${props.pic}) no-repeat center center fixed`};
   background-color: var(--background-dark);
   background-blend-mode: luminosity;
