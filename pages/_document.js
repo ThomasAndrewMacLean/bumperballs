@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
   gtag('config', 'UA-163654154-1', { 'anonymize_ip': true });`,
             }}
           ></script>
-          <meta name=" theme-color" content="#008b8b"></meta>
+          <meta name="theme-color" content="rgba(0, 139, 139, 1)"></meta>
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
         </Head>
