@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-// import T from './Translation';
+import T from './Translation';
 import CTA from './CTA';
 import { PictureContext } from '../pages/_app';
 
@@ -13,7 +13,9 @@ const Hero = () => {
     <HeroDiv pic={p} className="hero-padding">
       <Title>
         <img src={logo} alt="" />
-        {/* <T id="site-titel"></T> */}
+        <h1>
+          <T id="site-titel"></T>
+        </h1>
       </Title>
       <div className="cta">
         <CTA inverse></CTA>
@@ -23,19 +25,6 @@ const Hero = () => {
 };
 
 const HeroDiv = styled.div`
-  h1 {
-    padding: 2rem;
-    color: white;
-    font-size: 3rem;
-    text-shadow: 0 0 2px #8e6464;
-    font-weight: 700;
-    @media (max-width: 500px) {
-      display: flex;
-      justify-content: center;
-
-      padding-top: 7rem;
-    }
-  }
   background: ${(props) => `url(${props.pic}) no-repeat center center`};
   background-color: var(--background-dark);
   background-blend-mode: luminosity;
@@ -65,12 +54,19 @@ const HeroDiv = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const Title = styled.div`
+  padding: 2rem;
+  @media (max-width: 500px) {
+    display: flex;
+    justify-content: center;
+    padding-top: 7rem;
+  }
   img {
     width: 250px;
-    position: sticky;
-    top: 0;
   }
-  text-shadow: 0 0 2px var(--background-dark);
+  h1 {
+    position: absolute;
+    top: -100%;
+  }
 `;
 export default Hero;

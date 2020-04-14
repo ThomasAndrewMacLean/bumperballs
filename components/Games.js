@@ -71,7 +71,7 @@ const GameDiv = styled.div`
     text-align: center;
     padding-bottom: 2rem;
     color: var(--background-white);
-    text-shadow: 0 0 2px var(--background-dark);
+    text-shadow: 0 0 8px black;
   }
   h3 {
     font-size: 1rem;

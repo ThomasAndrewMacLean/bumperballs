@@ -6,7 +6,7 @@ const Spacer = () => {
 };
 
 const Stripes = styled.div`
-  height: 50px;
+  height: 10px;
   margin-top: -1px;
   background-image: var(--stripes);
   background-size: 500px 500px;

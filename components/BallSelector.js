@@ -66,6 +66,8 @@ const Wrap = styled.div`
   }
 `;
 const SelectBalls = styled.div`
+  user-select: none;
+
   height: 45px;
   width: 150px;
   /* outline: 1px solid; */

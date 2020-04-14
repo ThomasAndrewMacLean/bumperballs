@@ -38,13 +38,14 @@ const IndexPage = () => {
         <Faq q="waarGebruiken"></Faq>
         <Faq q="voorWelkeGelegenheden"></Faq>
       </FaqWrap>
-
       <Games></Games>
       <Spacer />
       <Formules></Formules>
+      <Spacer />
       <Praktisch></Praktisch>
       <Map></Map>
       <Footer></Footer>
+      <Spacer />
     </Main>
   );
 };
