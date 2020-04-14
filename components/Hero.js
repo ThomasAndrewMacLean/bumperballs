@@ -63,6 +63,10 @@ const Title = styled.div`
   }
   img {
     width: 250px;
+    transition: transform 300ms ease;
+  }
+  img:hover {
+    transform: scale(1.2) rotate(-10deg);
   }
   h1 {
     position: absolute;
