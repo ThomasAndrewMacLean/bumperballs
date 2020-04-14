@@ -2,10 +2,14 @@
 
 :root {
   --background-modal: rgba(0, 139, 139, 0.295);
-  --background-dark: darkcyan;
-  --background-grey: #8080806e;
+  --background-dark: rgba(0, 139, 139, 1);
+  --background-grey: rgba(0, 139, 139, 0.295);
   --background-white: #fff;
   --border: 3px solid black;
+
+  /* --background-modal: rgba(128, 172, 230, 0.295);
+  --background-dark: rgb(128, 172, 230);
+  --background-grey: rgba(128, 172, 230, 0.295); */
 }
 * {
   margin: 0;
