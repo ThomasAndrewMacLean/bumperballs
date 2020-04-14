@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400&display=swap');
 
 :root {
+  /* ALSO Set the theme-color meta tag in index.js HEAD section */
   --background-modal: rgba(0, 139, 139, 0.295);
   --background-dark: rgba(0, 139, 139, 1);
   --background-grey: rgba(0, 139, 139, 0.295);
