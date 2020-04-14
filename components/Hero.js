@@ -6,7 +6,7 @@ import { PictureContext } from '../pages/_app';
 
 const Hero = () => {
   const pics = useContext(PictureContext);
-  const p = pics[0].pic[0].url;
+  const p = pics.find((p) => p.id === 'heroPic').pic[0].url;
 
   return (
     <HeroDiv pic={p} className="hero-padding">
@@ -47,6 +47,6 @@ const HeroDiv = styled.div`
 `;
 
 const Title = styled.h1`
-  /* color: red; */
+  text-shadow: 0 0 2px var(--background-dark);
 `;
 export default Hero;

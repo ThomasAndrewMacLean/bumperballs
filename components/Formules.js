@@ -17,7 +17,7 @@ const Formules = () => {
           min={4}
           max={12}
           step={2}
-          start={0}
+          start={4}
           price={parseInt(
             translationsFromContext.find((t) => t.id === 'prijsWoensdagKlein')
               .NL

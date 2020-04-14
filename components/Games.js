@@ -5,7 +5,7 @@ import { PictureContext } from '../pages/_app';
 
 const Games = () => {
   const pics = useContext(PictureContext);
-  const p = pics[2].pic[0].url;
+  const p = pics.find((p) => p.id === 'gamesPic').pic[0].url;
 
   return (
     <Clip pic={p}>
@@ -40,6 +40,10 @@ const Clip = styled.div`
   background-blend-mode: luminosity;
   background-size: cover;
 
+  @media (max-width: 700px) {
+    background-attachment: inherit;
+  }
+
   clip-path: url(#wave);
 `;
 const GameDiv = styled.div`
@@ -54,7 +58,6 @@ const GameDiv = styled.div`
     width: 30%;
     background-color: #fff;
     border: var(--border);
-    /* box-shadow: 3px 3px 6px 0px #531bad1a; */
     text-align: center;
     padding: 1rem;
     @media (max-width: 700px) {

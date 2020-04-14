@@ -24,6 +24,21 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-163654154-1"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163654154-1', { 'anonymize_ip': true });`,
+            }}
+          ></script>
+
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
         </Head>
