@@ -2,11 +2,14 @@ import React from 'react';
 import { useStore } from '../store';
 import T from './Translation';
 
-const CTA = () => {
+const CTA = ({ inverse }) => {
   const { setShowModal } = useStore();
 
   return (
-    <button className="button" onClick={() => setShowModal(true)}>
+    <button
+      className={inverse ? 'inverse button' : 'button'}
+      onClick={() => setShowModal(true)}
+    >
       <T id="site-cta"></T>
     </button>
   );

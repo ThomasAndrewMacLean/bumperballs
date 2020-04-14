@@ -58,8 +58,8 @@ h2 {
 
 .button {
   border: var(--border) !important;
-  background: var(--background-dark) !important;
-  color: var(--background-white) !important;
+  background: var(--background-dark);
+  color: var(--background-white);
   font-size: inherit;
   font-family: inherit;
   padding: 1rem 2rem;
@@ -74,10 +74,17 @@ h2 {
   transition: all 300ms ease;
 }
 .button:hover {
-  background: var(--background-white) !important;
-  color: var(--background-dark) !important;
+  background: var(--background-white);
+  color: var(--background-dark);
 }
-
+.button.inverse {
+  background: var(--background-white);
+  color: var(--background-dark);
+}
+.button.inverse:hover {
+  background: var(--background-dark);
+  color: var(--background-white);
+}
 @media (max-width: 500px) {
   .content {
     padding: 0 2rem;

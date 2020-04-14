@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import T from './Translation';
+import { PictureContext } from '../pages/_app';
 
 const Games = () => {
+  const pics = useContext(PictureContext);
+  const p = pics[2].pic[0].url;
+
   return (
-    <Clip>
+    <Clip pic={p}>
       <GameDiv className="topBottomPadding">
         <svg height="0" width="0">
           <clipPath id="wave" clipPathUnits="objectBoundingBox">
@@ -31,11 +35,14 @@ const Games = () => {
 };
 
 const Clip = styled.div`
+  background: ${(props) => `url(${props.pic}) no-repeat center center fixed`};
+  background-color: var(--background-dark);
+  background-blend-mode: multiply;
+  background-size: cover;
+
   clip-path: url(#wave);
 `;
 const GameDiv = styled.div`
-  background: var(--background-dark);
-
   ul {
     list-style: none;
     display: flex;
@@ -46,7 +53,7 @@ const GameDiv = styled.div`
   li {
     width: 30%;
     background-color: #fff;
-    border:  var(--border);
+    border: var(--border);
     /* box-shadow: 3px 3px 6px 0px #531bad1a; */
     text-align: center;
     padding: 1rem;
