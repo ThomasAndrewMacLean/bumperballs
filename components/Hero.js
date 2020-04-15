@@ -26,7 +26,7 @@ const Hero = () => {
 
 const HeroDiv = styled.div`
   background: ${(props) => `url(${props.pic}) no-repeat center center`};
-  background-color: var(--background-dark);
+  background-color: var(--background-image-blend);
   background-blend-mode: luminosity;
 
   background-size: cover;
