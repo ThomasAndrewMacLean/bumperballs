@@ -25,6 +25,17 @@ const IndexPage = () => {
         '#008b8b'
       );
     }
+
+    if (document.location.search.includes('blue')) {
+      document.documentElement.style.setProperty(
+        '--background-modal',
+        'rgba(128, 172, 230, 0.295)'
+      );
+      document.documentElement.style.setProperty(
+        '--background-dark',
+        'rgba(128, 172, 230, 1)'
+      );
+    }
   }, []);
   const { showModal, showToast } = useStore();
   return (
