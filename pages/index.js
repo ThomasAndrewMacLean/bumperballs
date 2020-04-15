@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Faq from '../components/Faq';
@@ -15,6 +15,17 @@ import { useStore } from '../store';
 import Spacer from '../components/Spacer';
 
 const IndexPage = () => {
+  useEffect(() => {
+    if (document.location.search.includes('roboto')) {
+      document.documentElement.style.setProperty('--font', 'Roboto');
+    }
+    if (document.location.search.includes('image')) {
+      document.documentElement.style.setProperty(
+        '--background-image-blend',
+        '#008b8b'
+      );
+    }
+  }, []);
   const { showModal, showToast } = useStore();
   return (
     <Main>
