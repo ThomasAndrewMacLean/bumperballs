@@ -3,8 +3,8 @@
 
 :root {
   /* ALSO Set the theme-color meta tag in index.js HEAD section */
-  --background-modal: rgba(0, 139, 139, 0.295);
-  --background-dark: rgba(0, 139, 139, 1);
+  --background-modal: #008b8b4b;
+  --background-dark: #008b8b;
   --background-white: #fff;
   --border: 3px solid black;
   --background-image-blend: slategrey;
