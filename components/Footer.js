@@ -15,7 +15,10 @@ const Footer = () => {
         <T id="adres"></T>
       </div>
       <div className="right">
-        Made with ❤️ {new Date().getFullYear()} © Westerling &amp; MacLean
+        Made with ❤️ {new Date().getFullYear()} ©{' '}
+        <a href="https://westerling-maclean.be">
+          Westerling&nbsp;&amp;&nbsp;MacLean
+        </a>
       </div>
     </FooterWrap>
   );
