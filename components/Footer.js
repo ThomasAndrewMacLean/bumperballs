@@ -14,7 +14,9 @@ const Footer = () => {
         <T id="mail"></T>
         <T id="adres"></T>
       </div>
-      <div className="right">Made with ❤️ 2020 © Westerling &amp; MacLean</div>
+      <div className="right">
+        Made with ❤️ {new Date().getFullYear()} © Westerling &amp; MacLean
+      </div>
     </FooterWrap>
   );
 };
