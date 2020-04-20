@@ -7,6 +7,7 @@ const Map = () => {
     <MapDiv>
       <iframe
         width="600"
+        title="google map embed"
         height="300"
         frameBorder="0"
         style={{ border: 0 }}

@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html lang="nl">
         <Head>
           {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
           <script
@@ -38,6 +38,62 @@ export default class MyDocument extends Document {
   gtag('config', 'UA-163654154-1', { 'anonymize_ip': true });`,
             }}
           ></script>
+
+          <link rel="manifest" href={`/manifest.json`} />
+
+          <meta name="application-name" content="BMS Rent" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="default"
+          />
+          <meta name="apple-mobile-web-app-title" content="BMS Rent" />
+          <meta name="description" content="BMS Rent" />
+          <meta name="format-detection" content="telephone=no" />
+          <meta name="mobile-web-app-capable" content="yes" />
+
+          <meta name="msapplication-TileColor" content="#2B5797" />
+          <meta name="msapplication-tap-highlight" content="no" />
+
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href={`/apple-touch-icon.png`}
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href={`/favicon-32x32.png`}
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href={`/favicon-16x16.png`}
+          />
+
+          <link rel="shortcut icon" href={`/favicon.ico`} />
+
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:url" content="https://bmsrent.be" />
+          <meta name="twitter:title" content="BMS Rent" />
+          <meta name="twitter:description" content="BMS Rent" />
+          <meta
+            name="twitter:image"
+            content="https://bmsrent.be/android-chrome-192x192.png"
+          />
+          {/*
+<meta name="twitter:creator" content="@DavidWShadow" /> */}
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="BMS Rent" />
+          <meta property="og:description" content="BMS Rent" />
+          <meta property="og:site_name" content="BMS Rent" />
+          <meta property="og:url" content="https://bmsrent.be" />
+          <meta
+            property="og:image"
+            content="https://bmsrent.be/apple-touch-icon.png"
+          />
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
         </Head>

@@ -1,5 +1,6 @@
 require('dotenv').config();
-//const withCSS = require('@zeit/next-css');
+const withPWA = require('next-pwa');
+
 const webpack = require('webpack');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -11,7 +12,7 @@ const envVariables = {
   ASSET_PREFIX: prefix,
 };
 
-module.exports = {
+module.exports = withPWA({
   env: envVariables,
   publicRuntimeConfig: {
     SENTRY: process.env.SENTRY,
@@ -32,4 +33,4 @@ module.exports = {
 
     return config;
   },
-};
+});
