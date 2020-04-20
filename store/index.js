@@ -8,9 +8,9 @@ export const [useStore] = create((set, get) => ({
     } else {
       document.querySelector('body').classList.remove('modal-open');
     }
-    return set(() => ({ showModal: show, showPricesFor: '' }));
+    return set(() => ({ showModal: show }));
   },
-  showPricesFor: '',
+  showPricesFor: 'Weekend',
   setShowPricesFor: (day) => {
     return set(() => ({ showPricesFor: day }));
   },

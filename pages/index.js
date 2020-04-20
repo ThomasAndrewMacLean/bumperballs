@@ -1,48 +1,30 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import Faq from '../components/Faq';
-import Games from '../components/Games';
-import Map from '../components/Map';
-import Praktisch from '../components/Praktisch';
-import Toaster from '../components/Toaster';
-import Formules from '../components/Formules';
-import Footer from '../components/Footer';
-import Hero from '../components/Hero';
-import T from '../components/Translation';
-import Reservation from '../components/Reservation';
+
+import {
+  Faq,
+  Games,
+  Map,
+  Praktisch,
+  Toaster,
+  Formules,
+  Footer,
+  Hero,
+  T,
+  Reservation,
+  Spacer,
+} from '../components';
+
 import { useStore } from '../store';
-import Spacer from '../components/Spacer';
 
 const IndexPage = () => {
-  useEffect(() => {
-    if (document.location.search.includes('roboto')) {
-      document.documentElement.style.setProperty('--font', 'Roboto');
-    }
-    if (document.location.search.includes('image')) {
-      document.documentElement.style.setProperty(
-        '--background-image-blend',
-        '#008b8b'
-      );
-    }
-
-    if (document.location.search.includes('blue')) {
-      document.documentElement.style.setProperty(
-        '--background-modal',
-        'rgba(128, 172, 230, 0.295)'
-      );
-      document.documentElement.style.setProperty(
-        '--background-dark',
-        'rgba(128, 172, 230, 1)'
-      );
-    }
-  }, []);
   const { showModal, showToast } = useStore();
   return (
     <Main>
       <Head>
         <title>BMS Rent</title>
-        <meta name="theme-color" content="#008b8b"></meta>
+        <meta name="theme-color" content="#80ace6"></meta>
 
         <meta
           name="viewport"
