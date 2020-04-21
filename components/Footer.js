@@ -16,7 +16,7 @@ const Footer = () => {
       </div>
       <div className="right">
         Made with ❤️ {new Date().getFullYear()} ©{' '}
-        <a href="https://westerling-maclean.be">
+        <a href="https://westerling-maclean.be" rel="noopener noreferrer nofollow" target="_blank">
           Westerling&nbsp;&amp;&nbsp;MacLean
         </a>
       </div>
