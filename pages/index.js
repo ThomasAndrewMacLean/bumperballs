@@ -24,7 +24,7 @@ const IndexPage = () => {
     <Main>
       <Head>
         <title>BMS Rent</title>
-        <meta name="theme-color" content="#80ace6"></meta>
+        <meta name="theme-color" content="#308bae"></meta>
 
         <meta
           name="viewport"
