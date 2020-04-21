@@ -5,7 +5,7 @@
   /* ALSO Set the theme-color meta tag in index.js HEAD section */
   --background-modal: #308bae4b;
   --background-dark: #308bae;
-   /* #80ace6; */
+  /* #80ace6; */
   --background-white: #fff;
   --border: 3px solid black;
   --background-image-blend: slategrey;
@@ -55,6 +55,11 @@
     #62b4d5 100%
   );
   --white-stripes: linear-gradient(45deg, #fff 0%, #fff 100%);
+}
+
+::selection {
+  background: var(--background-dark); /* WebKit/Blink Browsers */
+  color: var(--background-white);
 }
 * {
   margin: 0;

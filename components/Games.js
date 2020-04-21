@@ -72,6 +72,10 @@ const GameDiv = styled.div`
     padding-bottom: 2rem;
     color: var(--background-white);
     text-shadow: 0 0 8px black;
+    @media (max-width: 700px) {
+      color: black;
+      text-shadow: 0 0 8px var(--background-white);
+    }
   }
   h3 {
     font-size: 1rem;
