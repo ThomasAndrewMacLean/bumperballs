@@ -7,10 +7,14 @@ steps:
     args: ['add', 'firebase-tools']
   - name: node:10.15.1
     entrypoint: yarn
-    args: ['build']
-    env:
-    - 'AIRTABLE_API_KEY:$_AIRTABLE_API_KEY'
-    - 'AIRTABLE_APP:$_AIRTABLE_APP'
+    args:
+      [
+        'build',
+        '--build-arg',
+        'AIRTABLE_API_KEY=${_AIRTABLE_API_KEY}',
+        '--build-arg',
+        'AIRTABLE_APP=${_AIRTABLE_APP}',
+      ]
   - name: 'node:10.15.1'
     entrypoint: './node_modules/.bin/firebase'
     args: ['deploy', '--project', '$PROJECT_ID', '--token', '$_TOKEN']
