@@ -55,7 +55,7 @@ const Calender = () => {
   const [min, setMin] = useState(false);
 
   const [addedDays, setAddedDays] = useState([]);
-  const boekbareDagen = [3, 6, 0];
+  const boekbareDagen = [1, 2, 4, 5, 3, 6, 0];
   const addDate = (dayInWeek, index) => {
     if (!boekbareDagen.includes(dayInWeek)) return;
     if (dayInWeek === 6) {
