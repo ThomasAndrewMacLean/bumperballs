@@ -53,7 +53,7 @@ const Hero = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         />
         <CtaWrapper>
-          <CTA inverse={!lightHeader}></CTA>
+          <CTA inHeader inverse={!lightHeader}></CTA>
         </CtaWrapper>
       </SmallLogo>
     </HeroDiv>
