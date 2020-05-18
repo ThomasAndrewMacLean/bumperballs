@@ -1,18 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import T from './Translation';
 import CTA from './CTA';
 import { PictureContext } from '../pages/_app';
+import { useStore } from '../store';
 
 const Hero = () => {
   const pics = useContext(PictureContext);
-  const p = pics.find((p) => p.id === 'heroPic').pic[0].url;
+  const heroPic = pics.find((p) => p.id === 'heroPic').pic[0].url;
   const logo = pics.find((p) => p.id === 'logo').pic[0].url;
+  const [showSmallLogo, setShowSmallLogo] = useState(false);
+  const { lightHeader } = useStore();
+
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          setShowSmallLogo(true);
+        }
+        if (entry.isIntersecting) {
+          setShowSmallLogo(false);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '25px',
+        threshold: 0,
+      }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+  }, [ref]);
 
   return (
-    <HeroDiv pic={p} className="hero-padding">
+    <HeroDiv pic={heroPic} className="hero-padding">
       <Title>
-        <img src={logo} alt="" />
+        <img src={logo} alt="BMS rent logo" ref={ref} />
         <h1>
           <T id="site-titel"></T>
         </h1>
@@ -20,6 +46,16 @@ const Hero = () => {
       <div className="cta">
         <CTA inverse></CTA>
       </div>
+      <SmallLogo showSmallLogo={showSmallLogo}>
+        <img
+          src={logo}
+          alt="BMS rent logo"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        />
+        <CtaWrapper>
+          <CTA inverse={!lightHeader}></CTA>
+        </CtaWrapper>
+      </SmallLogo>
     </HeroDiv>
   );
 };
@@ -51,6 +87,65 @@ const HeroDiv = styled.div`
       bottom: auto;
       padding-top: 2rem;
     }
+  }
+`;
+
+const CtaWrapper = styled.div``;
+const SmallLogo = styled.div`
+  ${CtaWrapper} {
+    display: none;
+  }
+  position: fixed;
+  height: 75px;
+  transition: transform 250ms ease-in;
+  transform: ${(props) =>
+    props.showSmallLogo ? 'translateY(0)' : 'translateY(-170%)'};
+  margin: 2rem;
+  top: 0;
+  z-index: 1;
+  img {
+    height: 100%;
+    transition: transform 250ms ease-in;
+    &:hover {
+      transform: ${(props) =>
+        props.showSmallLogo
+          ? 'translateY(0) scale(1.1) rotate(-10deg)'
+          : 'translateY(-250%)'};
+    }
+  }
+  @media (max-width: 1100px) {
+    height: 50px;
+  }
+  @media (max-width: 910px) {
+    ${CtaWrapper} {
+      display: block;
+      margin-left: auto;
+    }
+    transform: ${(props) =>
+      props.showSmallLogo ? 'translateY(0)' : 'translateY(-100%)'};
+    transition: transform 350ms ease-in-out, background-color 250ms ease-in;
+    height: 100px;
+    margin: 0;
+    padding: 1rem;
+    background: var(--background-header);
+    width: 100%;
+    box-shadow: 0px 0px 35px 10px #70809080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 50%; */
+
+    /* If we want border radius we set this as after block TODO:also fix transition */
+    /* &::after {
+      content: '';
+      display: block;
+      background: var(--background-header);
+      width: 100%;
+      height: 50%;
+      top: 0;
+      position: absolute;
+      z-index: -1;
+    } */
   }
 `;
 

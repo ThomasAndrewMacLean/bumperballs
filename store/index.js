@@ -24,4 +24,8 @@ export const [useStore] = create((set, get) => ({
   setShowToast: (show) => {
     return set(() => ({ showToast: show }));
   },
+  lightHeader: false,
+  setLightHeader: (value) => {
+    return set(() => ({ lightHeader: value }));
+  },
 }));
