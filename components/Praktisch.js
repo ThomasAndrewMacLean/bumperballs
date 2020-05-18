@@ -28,8 +28,8 @@ const Praktisch = () => {
       },
       {
         root: null,
-        rootMargin: '10px',
-        threshold: [0.5],
+        rootMargin: '0px',
+        threshold: 0,
       }
     );
     if (ref.current) {
@@ -37,7 +37,8 @@ const Praktisch = () => {
     }
   }, [ref]);
   return (
-    <PraktischDiv ref={ref} className="topBottomPadding">
+    <PraktischDiv className="topBottomPadding">
+      <div ref={ref}></div>
       <div className="content">
         <T id={'praktischeInfo'}></T>
         <T id={'veiligheid'}></T>
