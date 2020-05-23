@@ -4,10 +4,6 @@ import '../styles/style.css';
 import Airtable from 'airtable';
 //import PropTypes from 'prop-types';
 
-const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
-  process.env.AIRTABLE_APP
-);
-
 export const TranslationContext = createContext([]);
 export const PictureContext = createContext([]);
 
@@ -27,6 +23,9 @@ function MyApp({ Component, pageProps, translations, pictures }) {
 // be server-side rendered.
 //
 MyApp.getInitialProps = async (appContext) => {
+  const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
+    process.env.AIRTABLE_APP
+  );
   // calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(appContext);
   const texts = await base('Text').select().all();
