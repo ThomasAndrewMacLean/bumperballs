@@ -1,5 +1,6 @@
 import App from 'next/app';
 import React, { createContext } from 'react';
+import fetch from 'isomorphic-fetch';
 import '../styles/style.css';
 //import PropTypes from 'prop-types';
 
