@@ -7,9 +7,9 @@ import '../styles/style.css';
 export const TranslationContext = createContext([]);
 export const PictureContext = createContext([]);
 
-function MyApp({ Component, pageProps, translations, pictures }) {
+function MyApp({ Component, pageProps, translations, pics }) {
   return (
-    <PictureContext.Provider value={pictures}>
+    <PictureContext.Provider value={pics}>
       <TranslationContext.Provider value={translations}>
         <Component {...pageProps} />
       </TranslationContext.Provider>
@@ -36,6 +36,7 @@ MyApp.getInitialProps = async (appContext) => {
   const dataFromAirtable = await dataFromAirtableJson.json();
   const appProps = await App.getInitialProps(appContext);
 
+  console.log(dataFromAirtable);
   return {
     ...appProps,
     ...dataFromAirtable,
