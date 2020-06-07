@@ -36,7 +36,7 @@ MyApp.getInitialProps = async (appContext) => {
   const dataFromAirtable = await dataFromAirtableJson.json();
   const appProps = await App.getInitialProps(appContext);
 
-  console.log(dataFromAirtable);
+  //console.log(dataFromAirtable);
   return {
     ...appProps,
     ...dataFromAirtable,

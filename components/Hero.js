@@ -15,6 +15,9 @@ const Hero = () => {
   const ref = useRef();
 
   useEffect(() => {
+    if (!('IntersectionObserver' in window)) {
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {

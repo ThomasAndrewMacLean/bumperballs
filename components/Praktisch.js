@@ -8,6 +8,9 @@ const Praktisch = () => {
   const { setLightHeader } = useStore();
 
   useEffect(() => {
+    if (!('IntersectionObserver' in window)) {
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         console.log(entry);
