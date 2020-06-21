@@ -2,6 +2,7 @@ import React, { useContext, useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import T from './Translation';
 import CTA from './CTA';
+import SocialMedia from './SocialMedia';
 import { PictureContext } from '../pages/_app';
 import { useStore } from '../store';
 
@@ -48,6 +49,7 @@ const Hero = () => {
       </Title>
       <div className="cta">
         <CTA inverse></CTA>
+        <SocialMedia />
       </div>
       <SmallLogo showSmallLogo={showSmallLogo}>
         <img
@@ -85,6 +87,9 @@ const HeroDiv = styled.div`
     @media (max-width: 500px) {
       position: inherit;
       display: flex;
+      flex-direction: column;
+      max-width:90%;
+      margin:auto;
       justify-content: center;
       right: auto;
       bottom: auto;
@@ -157,7 +162,7 @@ const Title = styled.div`
   @media (max-width: 500px) {
     display: flex;
     justify-content: center;
-    padding-top: 7rem;
+    padding-top: 6rem;
   }
   img {
     width: 250px;

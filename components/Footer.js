@@ -15,8 +15,23 @@ const Footer = () => {
         <T id="adres"></T>
       </div>
       <div className="right">
+        <a
+          href="https://www.facebook.com/BMSrent/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Facebook
+        </a>
+        <br />
+        <br />
+        <br />
+        <br />
         Made with ❤️ {new Date().getFullYear()} ©{' '}
-        <a href="https://westerling-maclean.be" rel="noopener noreferrer nofollow" target="_blank">
+        <a
+          href="https://westerling-maclean.be"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
           Westerling&nbsp;&amp;&nbsp;MacLean
         </a>
       </div>
@@ -47,7 +62,11 @@ const FooterWrap = styled.footer`
 
   .right {
     padding-top: 2rem;
+    @media (min-width: 500px) {
+      text-align: right;
+    }
   }
+
   background: var(--background-modal);
 `;
 
