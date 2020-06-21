@@ -5,7 +5,7 @@ const SocialLink = styled.a`
   height: 50px;
   width: 50px;
   display: inline-flex;
-  background: white;
+  background: var(--background-white);
   /* justify-content: flex-end; */
   /* align-items: flex-end; */
 
@@ -17,6 +17,12 @@ const SocialLink = styled.a`
   color: var(--background-dark);
 
   border-radius: 50%;
+  transition: all 100ms ease-in;
+  &:hover {
+    color: var(--background-white);
+    background: var(--background-dark);
+    transform: scale(1.1);
+  }
 `;
 const Wrap = styled.div`
   display: flex;
