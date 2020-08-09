@@ -39,6 +39,7 @@ const BallSelector = ({ addToOrder, max, min, step, start, price, seize }) => {
         <button
           className="bg-hack"
           type="button"
+          style={{ display: 'inline' }}
           disabled={numberOfBalls === max}
           onClick={addBalls}
         >
@@ -99,7 +100,6 @@ const SelectBalls = styled.div`
   }
   .bg-hack {
     position: relative;
-    background: var(--background-dark);
   }
   .bg-hack::after {
     content: '';
