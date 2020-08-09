@@ -88,6 +88,7 @@ const SelectBalls = styled.div`
     height: 100%;
     font-size: inherit;
     font-family: inherit;
+    display: inline-block;
   }
   button:not([disabled]) {
     cursor: pointer;
@@ -98,6 +99,7 @@ const SelectBalls = styled.div`
   }
   .bg-hack {
     position: relative;
+    background: var(--background-dark);
   }
   .bg-hack::after {
     content: '';
