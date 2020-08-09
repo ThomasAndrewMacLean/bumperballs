@@ -89,6 +89,7 @@ const SelectBalls = styled.div`
     width: 30%;
     outline: none;
     border: none;
+    -webkit-appearance: none;
     height: 100%;
     font-size: inherit;
     font-family: inherit;
@@ -101,7 +102,7 @@ const SelectBalls = styled.div`
   button:not([disabled]):hover {
     background: var(--background-modal);
   }
-  .bg-hack {
+  /* .bg-hack {
     position: relative;
   }
   .bg-hack::after {
@@ -117,7 +118,7 @@ const SelectBalls = styled.div`
 
   .bg-hack:hover::after {
     background: none;
-  }
+  } */
 `;
 const NumberOfBalls = styled.span``;
 
