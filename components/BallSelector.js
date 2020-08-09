@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useStore } from '../store';
@@ -6,7 +6,10 @@ import { useStore } from '../store';
 const BallSelector = ({ addToOrder, max, min, step, start, price, seize }) => {
   const { setOrder } = useStore();
   const [numberOfBalls, setNumberOfBalls] = useState(start);
-
+  const [hack, setHack] = useState('');
+  useEffect(() => {
+    setHack('inline');
+  }, []);
   const removeBalls = () => {
     if (numberOfBalls === min) {
       if (addToOrder) setOrder(0, seize);
@@ -39,7 +42,7 @@ const BallSelector = ({ addToOrder, max, min, step, start, price, seize }) => {
         <button
           className="bg-hack"
           type="button"
-          style={{ display: 'inline' }}
+          style={{ display: hack }}
           disabled={numberOfBalls === max}
           onClick={addBalls}
         >
